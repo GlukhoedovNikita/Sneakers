@@ -1,0 +1,13 @@
+.Container {
+	display: grid;
+
+	margin: 45px 0;
+	padding: 150px 60px 100px 60px;
+
+	border-radius: 20px;
+	background: url('../../../../assets/img/bg-main-title.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	gap: 10px 0;
+}

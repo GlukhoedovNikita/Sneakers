@@ -1,0 +1,1 @@
+Если не работает pre-commit попробовать - git config --unset core.hookspath

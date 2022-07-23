@@ -1,0 +1,72 @@
+@import '@styles/variables.scss';
+
+.Container {
+	display: block;
+
+	width: fit-content;
+
+	cursor: pointer;
+
+	transition: $transition;
+
+	font-size: 16px;
+
+	font-weight: 700;
+	line-height: 19px;
+}
+
+.Green {
+	color: $color-white;
+	border: 1px solid $color-green;
+	background: $color-green;
+
+	&:hover {
+		color: $color-green;
+		background: $color-white;
+	}
+}
+
+.White {
+	color: $color-green;
+	border: 1px solid $color-green;
+	background: $color-white;
+
+	&:hover {
+		color: $color-white;
+		background: $color-green;
+	}
+}
+
+.Big {
+	padding: 20px 50px;
+
+	border: 3px solid;
+	border-radius: 40px;
+
+	font-size: 25px;
+	line-height: 27px;
+
+	&:hover {
+		border-radius: 45px;
+	}
+}
+
+.Meduim {
+	padding: 17px 25px;
+
+	border-radius: 20px;
+
+	&:hover {
+		border-radius: 25px;
+	}
+}
+
+.Small {
+	padding: 14px 20px;
+
+	border-radius: 20px;
+
+	&:hover {
+		border-radius: 25px;
+	}
+}

@@ -1,0 +1,42 @@
+@import '@styles/variables.scss';
+
+.Container {
+	display: block;
+
+	width: fit-content;
+}
+
+.H1 {
+	font-size: 37px;
+	font-weight: 700;
+	line-height: 39px;
+}
+
+.H2 {
+	font-size: 25px;
+	font-weight: 700;
+	line-height: 27px;
+}
+
+.H3 {
+	font-size: 27px;
+	font-weight: 600;
+	line-height: 29px;
+}
+
+.H4 {
+	font-size: 17px;
+	line-height: 19px;
+}
+
+.Black {
+	color: $color-black;
+}
+
+.Gray {
+	color: $color-gray;
+}
+
+.Green {
+	color: $color-green-light;
+}

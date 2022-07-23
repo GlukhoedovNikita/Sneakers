@@ -1,0 +1,10 @@
+@import '@styles/variables.scss';
+
+.Container {
+	cursor: pointer;
+	transition: $transition;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}

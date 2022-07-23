@@ -1,0 +1,25 @@
+@import '@styles/variables.scss';
+
+.Container {
+	padding: 80px 10% 0 10%;
+
+	background-color: $color-blue-light;
+
+	.Content {
+		display: grid;
+		grid-template-areas:
+			'header'
+			'body';
+		grid-template-rows: 110px 1fr;
+
+		border-radius: 20px 20px 0 0;
+		background-color: $color-white;
+
+		.Body {
+			padding: 0 3%;
+			grid-area: body;
+
+			border-radius: 20px 20px 0 0;
+		}
+	}
+}

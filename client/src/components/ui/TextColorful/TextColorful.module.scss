@@ -1,0 +1,32 @@
+@import '@styles/variables.scss';
+
+.Container {
+	display: block;
+
+	width: fit-content;
+
+	font-size: 52px;
+
+	font-weight: 700;
+	line-height: 57px;
+}
+
+.GreenOne {
+	color: $color-green;
+}
+
+.BlackOne {
+	color: $color-black;
+}
+
+.GreenTwo {
+	span {
+		color: $color-green;
+	}
+}
+
+.BlackTwo {
+	span {
+		color: $color-black;
+	}
+}

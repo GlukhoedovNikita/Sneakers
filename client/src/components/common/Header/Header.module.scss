@@ -1,0 +1,28 @@
+.Container {
+	display: grid;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 0 3%;
+
+	border-bottom: 1px solid #eaeaea;
+	grid-area: header;
+	grid-template-columns: repeat(2, auto);
+
+	.BlockLogo {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(2, auto);
+		gap: 0 10px;
+
+		.Logo {
+			grid-row: 1 / 3;
+		}
+	}
+
+	.BlockBtn {
+		display: grid;
+		grid-auto-flow: column;
+		gap: 0 20px;
+	}
+}
