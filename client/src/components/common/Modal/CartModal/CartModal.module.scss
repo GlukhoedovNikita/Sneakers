@@ -1,0 +1,104 @@
+@import '@styles/variables.scss';
+
+.Container {
+	position: fixed;
+	z-index: 11;
+	top: 0;
+	left: 0;
+
+	display: none;
+	justify-content: flex-end;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-color: $color-black-light;
+
+	.Content {
+		display: grid;
+
+		width: 23vw;
+		padding: 20px;
+
+		background-color: $color-white;
+		grid-template-rows: auto 1fr;
+
+		.BlockTitle {
+			margin-bottom: 30px;
+		}
+
+		.BlockEmpty,
+		.BlockSuccess {
+			display: grid;
+			align-self: center;
+
+			padding: 0 30px;
+
+			text-align: center;
+			justify-items: center;
+			gap: 10px;
+		}
+
+		.BlockContent {
+			display: grid;
+			grid-template-rows: 1fr repeat(2, auto);
+			gap: 25px;
+
+			.BlockProducts {
+				display: grid;
+				overflow-y: auto;
+				align-items: flex-start;
+
+				max-height: 70vh;
+				padding: 0 10px;
+				gap: 30px 0;
+
+				&::-webkit-scrollbar {
+					width: 4px;
+
+					border-radius: 10px;
+					background-color: #fff;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					border-radius: 10px;
+					background-color: $color-primary;
+				}
+			}
+
+			.BlockPrice {
+				display: grid;
+				justify-content: space-between;
+				grid-template-columns: repeat(2, auto);
+				gap: 7px;
+
+				.PriceTax {
+					justify-self: flex-end;
+				}
+			}
+
+			.BlockBtn {
+				justify-self: center;
+			}
+		}
+	}
+}
+
+.Active {
+	display: grid;
+
+	.Content {
+		animation-name: CartModalOpen;
+		animation-duration: 0.5s;
+	}
+}
+
+@keyframes CartModalOpen {
+	from {
+		transform: translateX(15vw);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}

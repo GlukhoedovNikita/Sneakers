@@ -1,0 +1,6 @@
+export { default as MainPage } from '@pages/Main/Main'
+export { default as FavouritePage } from '@pages/Favourite/Favourite'
+export { default as NotFoundPage } from '@pages/NotFound/NotFound'
+export { default as OrderPage } from '@pages/Order/Order'
+export { default as SingInPage } from '@pages/SingIn/SingIn'
+export { default as SingUpPage } from '@pages/SingUp/SingUp'

@@ -57,6 +57,7 @@ const webpackConfigBase: Configuration = {
     resolve: {
         alias: {
             '@components': pathResolve('src/components/'),
+            '@pages': pathResolve('src/pages/'),
             '@hooks': pathResolve('src/hooks/'),
             '@assets': pathResolve('src/assets/'),
             '@redux': pathResolve('src/redux/'),

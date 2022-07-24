@@ -1,0 +1,41 @@
+@import '@styles/variables.scss';
+
+.Container {
+	display: grid;
+
+	padding: 30px 20px 70px 20px;
+
+	border-bottom: 8px solid $color-primary;
+	border-radius: 20px 20px 0 0;
+	background-color: $color-white;
+
+	.BlockBtnClose {
+		justify-self: flex-end;
+
+		margin-bottom: 30px;
+	}
+
+	.Content {
+		display: grid;
+		gap: 40px 0;
+
+		padding: 0 30px;
+
+		.BlockNav {
+			display: grid;
+			justify-self: center;
+			grid-auto-flow: column;
+			gap: 0 15px;
+		}
+
+		.BlockInput {
+			display: grid;
+			justify-items: center;
+			gap: 15px 0;
+		}
+
+		.BlockBtn {
+			justify-self: center;
+		}
+	}
+}

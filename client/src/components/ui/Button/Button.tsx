@@ -9,6 +9,7 @@ const Button: FC<ButtonProps> = ({
     className,
     text,
     color = 'green',
+    square = false,
     size,
     ...props
 }) => {
@@ -20,6 +21,8 @@ const Button: FC<ButtonProps> = ({
                 [styles.Small]: size === 'small',
                 [styles.Green]: color === 'green',
                 [styles.White]: color === 'white',
+                [styles.Blue]: color === 'blue',
+                [styles.Square]: square,
             })}
             {...props}
         >

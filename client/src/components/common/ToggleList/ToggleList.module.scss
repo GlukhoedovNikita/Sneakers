@@ -1,0 +1,35 @@
+@import '@styles/variables.scss';
+
+.Container {
+	position: absolute;
+	z-index: 10;
+	top: 140%;
+	right: 0;
+
+	display: none;
+
+	border: 1px solid $color-gray-light;
+	border-radius: 5px;
+
+	background-color: $color-white;
+
+	.Link {
+		padding: 3px 10px;
+
+		transition: all 0.1s ease-in-out;
+
+		color: $color-black;
+
+		font-size: 16px;
+		line-height: 18px;
+
+		&:hover {
+			color: $color-white;
+			background-color: $color-primary;
+		}
+	}
+}
+
+.Active {
+	display: grid;
+}

@@ -27,6 +27,7 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["./components/*"],
+      "@pages/*": ["./pages/*"],
       "@hooks/*": ["./hooks/*"],
       "@assets/*": ["./assets/*"],
       "@redux/*": ["./redux/*"],

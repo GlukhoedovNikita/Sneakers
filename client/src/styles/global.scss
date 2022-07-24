@@ -1,5 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import '@styles/variables.scss';
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+
+html,
+body {
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+
+	&::-webkit-scrollbar {
+		width: 4px;
+
+		border-radius: 10px;
+		background-color: #fff;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background-color: $color-primary;
+	}
+}
+
+button {
+	overflow: visible;
+
+	width: auto;
+	margin: 0;
+	padding: 0;
+
+	text-align: start;
+
+	color: inherit;
+	border: none;
+	background: transparent;
+
+	font: inherit;
+	line-height: normal;
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+	-webkit-appearance: none;
+
+	&::-moz-focus-inner {
+		padding: 0;
+
+		border: 0;
+	}
+}
+
+input {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+
+	outline: 0;
 }

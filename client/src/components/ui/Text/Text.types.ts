@@ -5,4 +5,5 @@ export interface TextProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivEleme
     text: string,
     size: 'h1' | 'h2' | 'h3' | 'h4',
     color?: 'black' | 'gray' | 'green',
+    bold?: 500 | 600 | 700,
 }

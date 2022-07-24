@@ -1,0 +1,19 @@
+@import '@styles/variables.scss';
+
+.Container {
+	display: grid;
+
+	padding: 10px;
+
+	cursor: pointer;
+	transition: $transition;
+
+	border: 2px solid $color-gray-light;
+	border-radius: 10px;
+
+	&:hover {
+		border: 2px solid $color-red;
+		border-radius: 15px;
+		background-color: $color-red-light;
+	}
+}

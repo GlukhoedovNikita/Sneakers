@@ -1,0 +1,21 @@
+@import '@styles/variables.scss';
+
+.Container {
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(3, auto);
+	gap: 0 12px;
+
+	padding: 15px;
+
+	border: 1px solid $color-gray-light;
+	border-radius: 40px;
+
+	.BlockText {
+		display: grid;
+		align-self: flex-end;
+
+		margin-bottom: 9px;
+		gap: 7px;
+	}
+}

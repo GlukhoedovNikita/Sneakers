@@ -1,0 +1,25 @@
+@import '@styles/variables.scss';
+
+.Container {
+	display: block;
+
+	cursor: pointer;
+	transition: $transition;
+
+	font-size: 30px;
+
+	font-weight: 700;
+	line-height: 34px;
+}
+
+.Black {
+	color: $color-black;
+
+	&:hover {
+		color: $color-primary-dark;
+	}
+}
+
+.Blue {
+	color: $color-primary-dark;
+}

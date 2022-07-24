@@ -9,6 +9,7 @@ const Text: FC<TextProps> = ({
     className,
     text,
     size,
+    bold = 400,
     color = 'black',
     ...props
 }) => {
@@ -22,6 +23,9 @@ const Text: FC<TextProps> = ({
                 [styles.H2]: size === 'h2',
                 [styles.H3]: size === 'h3',
                 [styles.H4]: size === 'h4',
+                [styles.Bold500]: bold === 500,
+                [styles.Bold600]: bold === 600,
+                [styles.Bold700]: bold === 700,
             })}
             {...props}
         >

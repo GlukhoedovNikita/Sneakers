@@ -1,0 +1,24 @@
+@import '@styles/variables.scss';
+
+.Container {
+	display: grid;
+
+	max-width: 260px;
+	padding: 20px;
+
+	border: 1px solid $color-gray-light;
+	border-radius: 40px;
+	gap: 15px 0;
+
+	.BlockPrice {
+		display: grid;
+		justify-content: space-between;
+		grid-template-rows: repeat(2, auto);
+		grid-template-columns: repeat(2, auto);
+
+		.Icon {
+			grid-column: 2 / 3;
+			grid-row: 1 / 3;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+@import '@styles/variables.scss';
+
+.Container {
+	position: fixed;
+	z-index: 11;
+	top: 0;
+	left: 0;
+
+	display: none;
+	align-content: center;
+	justify-content: center;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-color: $color-black-light;
+
+	.Content {
+		display: grid;
+
+		padding: 30px;
+
+		border-radius: 20px;
+		background-color: $color-white;
+		justify-items: center;
+		gap: 15px 0;
+
+		.Text {
+			display: block;
+
+			width: fit-content;
+
+			color: $color-black;
+
+			font-size: 25px;
+			line-height: 27px;
+
+			.Link {
+				cursor: pointer;
+
+				font-weight: 600;
+			}
+		}
+	}
+}
+
+.Active {
+	display: grid;
+}
