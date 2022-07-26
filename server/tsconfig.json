@@ -1,0 +1,29 @@
+{
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"],
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "es5",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "noEmit": true,
+
+        "allowJs": true,
+        "importHelpers": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+
+        "strict": true,
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "baseUrl": "src",
+        "paths": {
+            "@controllers/*": ["controllers/*"],
+            "@services/*": ["services/*"],
+            "@routes/*": ["routes/*"],
+            "@models/*": ["models/*"],
+            "@utils/*": ["utils/*"],
+            "@intefaces/*": ["intefaces/*"],
+        }
+    }
+}
