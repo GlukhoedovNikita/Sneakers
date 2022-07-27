@@ -1,20 +1,20 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	display: grid;
+	gap: 15px 0;
 
 	max-width: 260px;
 	padding: 20px;
 
 	border: 1px solid $color-gray-light;
 	border-radius: 40px;
-	gap: 15px 0;
 
 	.BlockPrice {
 		display: grid;
-		justify-content: space-between;
-		grid-template-rows: repeat(2, auto);
 		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(2, auto);
+		justify-content: space-between;
 
 		.Icon {
 			grid-column: 2 / 3;

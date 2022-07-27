@@ -9,7 +9,7 @@ import { IProduct, IProductNoImage } from 'interfaces/product.interfaces'
 class ProductService {
     async getAll() {
         try {
-            const products = await productModel.find<IProduct[]>()
+            const products = await productModel.find<IProduct>()
             return products
         } catch (e) {
             throw new Error(`Product Service Error - ${e}`)

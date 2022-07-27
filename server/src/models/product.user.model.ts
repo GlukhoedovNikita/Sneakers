@@ -7,9 +7,9 @@ const productUser = new Schema({
         unique: true,
         ref: 'auth'
     },
-    favourites: { type: Types.Array, required: true, default: [] },
-    cart: { type: Types.Array, required: true, default: [] },
-    order: { type: Types.Array, required: true, default: [] },
+    favourites: { type: Schema.Types.Array, required: true, default: [] },
+    cart: { type: Schema.Types.Array, required: true, default: [] },
+    order: { type: Schema.Types.Array, required: true, default: [] },
 })
 
 export default model('product-user', productUser)

@@ -1,13 +1,13 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	display: grid;
 
-	padding: 30px 20px 70px 20px;
+	padding: 30px 20px 70px;
 
+	background-color: $color-white;
 	border-bottom: 8px solid $color-primary;
 	border-radius: 20px 20px 0 0;
-	background-color: $color-white;
 
 	.BlockBtnClose {
 		justify-self: flex-end;
@@ -23,15 +23,15 @@
 
 		.BlockNav {
 			display: grid;
-			justify-self: center;
 			grid-auto-flow: column;
 			gap: 0 15px;
+			justify-self: center;
 		}
 
 		.BlockInput {
 			display: grid;
-			justify-items: center;
 			gap: 15px 0;
+			justify-items: center;
 		}
 
 		.BlockBtn {

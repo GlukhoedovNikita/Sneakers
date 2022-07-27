@@ -1,26 +1,25 @@
 .Container {
 	display: grid;
-
-	height: 100%;
-
-	margin-top: 45px;
-	margin-bottom: 30px;
 	grid-template-rows: auto 1fr;
 	gap: 20px;
 
+	height: 100%;
+	margin-top: 45px;
+	margin-bottom: 30px;
+
 	.BlockProducts {
 		display: grid;
-		align-items: flex-start;
-		justify-content: space-between;
 		grid-template-columns: repeat(5, auto);
 		gap: 30px;
+		align-items: flex-start;
+		justify-content: space-between;
 	}
 
 	.BlockEmpty {
 		display: grid;
-		align-self: center;
-		justify-self: center;
 		gap: 10px;
+		align-self: center;
 		justify-items: center;
+		justify-self: center;
 	}
 }

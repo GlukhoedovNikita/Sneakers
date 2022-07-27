@@ -51,5 +51,5 @@
             "version": "detect"
         }
     },
-    "ignorePatterns": ["node-modules/*", "webpack/*", "webpack.config.ts"]
+    "ignorePatterns": ["node-modules/*", "webpack/*", "webpack.config.ts", "dist"]
 }

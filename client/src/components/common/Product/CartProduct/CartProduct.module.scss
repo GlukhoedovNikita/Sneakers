@@ -1,10 +1,10 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	display: grid;
-	align-items: center;
 	grid-template-columns: repeat(3, auto);
 	gap: 0 12px;
+	align-items: center;
 
 	padding: 15px;
 
@@ -13,9 +13,9 @@
 
 	.BlockText {
 		display: grid;
+		gap: 7px;
 		align-self: flex-end;
 
 		margin-bottom: 9px;
-		gap: 7px;
 	}
 }

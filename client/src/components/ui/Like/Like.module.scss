@@ -1,23 +1,23 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	display: grid;
 
 	padding: 10px;
 
-	transition: $transition;
-
 	border: 2px solid $color-gray-light;
 	border-radius: 10px;
 
+	transition: $transition;
+
 	&:hover {
+		background-color: $color-red-light;
 		border: 2px solid $color-red-light;
 		border-radius: 15px;
-		background-color: $color-red-light;
 	}
 }
 
 .Active {
-	border: 2px solid $color-red-light;
 	background-color: $color-red-light;
+	border: 2px solid $color-red-light;
 }

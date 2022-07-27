@@ -1,4 +1,4 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	position: absolute;
@@ -8,23 +8,22 @@
 
 	display: none;
 
+	background-color: $color-white;
 	border: 1px solid $color-gray-light;
 	border-radius: 5px;
-
-	background-color: $color-white;
 
 	.Link {
 		padding: 3px 10px;
 
-		transition: all 0.1s ease-in-out;
-
-		color: $color-black;
-
 		font-size: 16px;
 		line-height: 18px;
+		color: $color-black;
+
+		transition: all 0.1s ease-in-out;
 
 		&:hover {
 			color: $color-white;
+
 			background-color: $color-primary;
 		}
 	}

@@ -1,12 +1,12 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	display: grid;
-	justify-items: center;
 	gap: 15px;
+	justify-items: center;
 
 	padding: 40px;
 
-	border-radius: 40px;
 	background-color: $color-white;
+	border-radius: 40px;
 }

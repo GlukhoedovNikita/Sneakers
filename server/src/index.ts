@@ -23,12 +23,12 @@ app.use(cors({
     credentials: true,
     origin: process.env.CLIENT_URL
 }))
-app.use(fileUpload)
+app.use(fileUpload())
 app.use(cookieParser())
 
 app.use('/product', productRouter)
 app.use('/auth', authRouter)
-app.use('/product/user', productUserRouter)
+app.use('/user/product', productUserRouter)
 
 const start = () => {
     connect(process.env.DB_URL as string)

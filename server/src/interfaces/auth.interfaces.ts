@@ -15,5 +15,5 @@ export interface IToken {
 
 export interface IJwtPayload {
     email: string,
-    _id: string,
+    id: string,
 }

@@ -19,8 +19,12 @@ const webpackConfigDev: Configuration = {
     // @ts-ignore //
     devServer: {
         // open: true,
+        historyApiFallback: true,
         port: 3000,
         hot: true,
+        static: {
+            publicPath: '/'
+        }
     },
 
     plugins: [

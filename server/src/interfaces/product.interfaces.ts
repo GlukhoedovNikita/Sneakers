@@ -5,4 +5,5 @@ export interface IProductNoImage {
 
 export interface IProduct extends IProductNoImage {
     image: string,
+    _id: string,
 }

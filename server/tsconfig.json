@@ -2,15 +2,16 @@
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"],
     "compilerOptions": {
-        "module": "CommonJS",
-        "target": "es5",
+        "target": "es2021",
+        "module": "commonjs",
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "noEmit": true,
+
+        "rootDir": "src",
+        "outDir": "dist",
 
         "allowJs": true,
         "importHelpers": true,
-        "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
 
         "strict": true,
@@ -20,10 +21,10 @@
         "paths": {
             "@controllers/*": ["controllers/*"],
             "@services/*": ["services/*"],
-            "@routes/*": ["routes/*"],
             "@models/*": ["models/*"],
+            "@routes/*": ["routes/*"],
+            "@interfaces/*": ["interfaces/*"],
             "@utils/*": ["utils/*"],
-            "@intefaces/*": ["intefaces/*"],
         }
     }
 }

@@ -1,28 +1,29 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	display: grid;
 
 	min-height: 95vh;
-	padding: 5% 10% 0 10%;
+	padding: 5% 10% 0;
 
 	background-color: $color-blue-light;
 
 	.Content {
 		display: grid;
-
-		border-radius: 20px 20px 0 0;
-		background-color: $color-white;
 		grid-template-areas:
-			'header'
-			'body';
+			"header"
+			"body";
 		grid-template-rows: 110px 1fr;
 
+		background-color: $color-white;
+		border-radius: 20px 20px 0 0;
+
 		.Body {
+			grid-area: body;
+
 			padding: 0 3%;
 
 			border-radius: 20px 20px 0 0;
-			grid-area: body;
 		}
 	}
 }

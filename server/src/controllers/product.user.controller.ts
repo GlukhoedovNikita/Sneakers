@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import productUserService from '@services/product.user.service'
 
 class ProductUserController {
-    async getAll(req: Request, res: Response) {
+    async get(req: Request, res: Response) {
         try {
             const { refreshToken } = req.cookies
             const productUser = await productUserService.getAll(refreshToken as string)

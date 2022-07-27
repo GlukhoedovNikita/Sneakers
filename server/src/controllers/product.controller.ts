@@ -1,5 +1,7 @@
-import ProductService from '@services/product.service'
 import { Request, Response } from 'express'
+import { UploadedFile } from 'express-fileupload'
+
+import ProductService from '@services/product.service'
 
 class ProductController {
     async getAll(req: Request, res: Response) {
@@ -22,7 +24,7 @@ class ProductController {
 
     async create(req: Request, res: Response) {
         try {
-            const createdProduct = await ProductService.create(req.body)
+            const createdProduct = await ProductService.create(req.body, req.files?.image as UploadedFile)
             res.json(createdProduct)
         } catch (e) {
             res.status(400).json({ message: `Product Controller Error - ${e}` })
@@ -31,7 +33,7 @@ class ProductController {
 
     async update(req: Request, res: Response) {
         try {
-            const updatedProduct = await ProductService.update(req.params.id, req.body)
+            const updatedProduct = await ProductService.update(req.params.id, req.body, req.files?.image as UploadedFile)
             res.json(updatedProduct)
         } catch (e) {
             res.status(400).json({ message: `Product Controller Error - ${e}` })

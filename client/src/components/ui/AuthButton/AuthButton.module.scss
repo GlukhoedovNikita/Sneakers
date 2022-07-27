@@ -1,15 +1,15 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
+	cursor: pointer;
+
 	display: block;
 
-	cursor: pointer;
-	transition: $transition;
-
 	font-size: 30px;
-
 	font-weight: 700;
 	line-height: 34px;
+
+	transition: $transition;
 }
 
 .Black {

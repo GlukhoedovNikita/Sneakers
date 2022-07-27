@@ -1,49 +1,54 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
+	cursor: pointer;
+
 	display: block;
 
 	width: fit-content;
 
-	cursor: pointer;
-
-	transition: $transition;
-
 	font-size: 16px;
-
 	font-weight: 700;
 	line-height: 19px;
+
+	transition: $transition;
 }
 
 .Green {
 	color: $color-white;
-	border: 1px solid $color-green;
+
 	background: $color-green;
+	border: 1px solid $color-green;
 
 	&:hover {
 		color: $color-green;
+
 		background: $color-white;
 	}
 }
 
 .White {
 	color: $color-green;
-	border: 1px solid $color-green;
+
 	background: $color-white;
+	border: 1px solid $color-green;
 
 	&:hover {
 		color: $color-white;
+
 		background: $color-green;
 	}
 }
 
 .Blue {
 	color: $color-white;
-	border: 1px solid $color-primary;
+
 	background: $color-primary;
+	border: 1px solid $color-primary;
 
 	&:hover {
 		color: $color-primary;
+
 		background: $color-white;
 	}
 }
@@ -51,11 +56,11 @@
 .Big {
 	padding: 20px 50px;
 
-	border: 3px solid;
-	border-radius: 40px;
-
 	font-size: 25px;
 	line-height: 27px;
+
+	border: 3px solid;
+	border-radius: 40px;
 
 	&:hover {
 		border-radius: 45px;
@@ -83,9 +88,9 @@
 }
 
 .Square {
-	transition: $transition;
-
 	border-radius: 8px;
+
+	transition: $transition;
 
 	&:hover {
 		border-radius: 15px;

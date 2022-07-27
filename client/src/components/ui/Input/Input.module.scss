@@ -1,20 +1,19 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	display: block;
 
 	width: 370px;
-
 	padding: 10px 14px;
-
-	transition: $transition;
-
-	color: $color-black;
-	border: 2px solid $color-primary;
-	border-radius: 10px;
 
 	font-size: 24px;
 	line-height: 28px;
+	color: $color-black;
+
+	border: 2px solid $color-primary;
+	border-radius: 10px;
+
+	transition: $transition;
 
 	&:focus {
 		border: 2px solid $color-primary-dark;

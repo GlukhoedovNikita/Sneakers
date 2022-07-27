@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import '@styles/variables.scss';
+@import "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
+
+@import "@styles/variables";
 
 * {
 	box-sizing: border-box;
@@ -9,19 +10,19 @@
 
 html,
 body {
-	font-family: 'Inter', sans-serif;
+	font-family: Inter, sans-serif;
 	font-weight: 400;
 
 	&::-webkit-scrollbar {
 		width: 4px;
 
-		border-radius: 10px;
 		background-color: #fff;
+		border-radius: 10px;
 	}
 
 	&::-webkit-scrollbar-thumb {
-		border-radius: 10px;
 		background-color: $color-primary;
+		border-radius: 10px;
 	}
 }
 
@@ -32,17 +33,17 @@ button {
 	margin: 0;
 	padding: 0;
 
-	text-align: start;
-
-	color: inherit;
-	border: none;
-	background: transparent;
-
 	font: inherit;
 	line-height: normal;
+	color: inherit;
+	text-align: start;
+
+	background: transparent;
+	border: none;
+
+	appearance: none;
 	-webkit-font-smoothing: inherit;
 	-moz-osx-font-smoothing: inherit;
-	-webkit-appearance: none;
 
 	&::-moz-focus-inner {
 		padding: 0;

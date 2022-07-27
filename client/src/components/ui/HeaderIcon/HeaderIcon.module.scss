@@ -1,7 +1,8 @@
-@import '@styles/variables.scss';
+@import "@styles/variables";
 
 .Container {
 	cursor: pointer;
+
 	transition: $transition;
 
 	&:hover {
