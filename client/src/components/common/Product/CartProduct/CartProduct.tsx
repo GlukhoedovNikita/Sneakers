@@ -1,18 +1,31 @@
 import { FC } from 'react'
 import cn from 'classnames'
 
-import { CartProductProps } from './CartProduct.types'
+import useTypedDispatch from '@hooks/useTypedDispatch'
+import useTypedSelector from '@hooks/useTypedSelector'
+import productUserSelector from '@store/slices/productUser/product.user.selector'
+import { updateDeleteCart } from '@store/slices/productUser/product.user.actions'
 
-import styles from './CartProduct.module.scss'
-
-import product from '@assets/img/product.jpg'
 import Delete from '@components/ui/Delete/Delete'
 import Text from '@components/ui/Text/Text'
 
+import { CartProductProps } from './CartProduct.types'
+import imageLoad from '@utils/imageLoad'
+
+import styles from './CartProduct.module.scss'
+
 const CartProduct: FC<CartProductProps> = ({
+    id,
+    name,
+    image,
+    price,
     className,
     ...props
 }) => {
+    const dispatch = useTypedDispatch()
+    const { cart } = useTypedSelector(productUserSelector)
+
+    const deleteCartHanlder = () => dispatch(updateDeleteCart({ productId: id, cart }))
     return (
         <div
             className={cn(className, styles.Container)}
@@ -22,14 +35,14 @@ const CartProduct: FC<CartProductProps> = ({
                 className={styles.Image}
                 width={110}
                 height={110}
-                src={product}
+                src={imageLoad(image)}
                 alt="Sneaker"
             />
             <div className={styles.BlockText}>
-                <Text text="Mens Snakers Nike Blazer Mid Suede" size="h4" />
-                <Text text="12 999 rub." size="h4" bold={600} />
+                <Text text={`Mens Snakers ${name}`} size="h4" />
+                <Text text={`${price} rub.`} size="h4" bold={600} />
             </div>
-            <Delete className={styles.BtnDelete} />
+            <Delete onClick={deleteCartHanlder} className={styles.BtnDelete} />
         </div>
     )
 }

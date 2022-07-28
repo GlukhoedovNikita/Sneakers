@@ -12,14 +12,22 @@
 		grid-template-columns: repeat(5, auto);
 		gap: 30px;
 		align-items: flex-start;
-		justify-content: space-between;
+		justify-content: flex-start;
 	}
 
 	.BlockEmpty {
 		display: grid;
+		grid-column: 1 / 6;
 		gap: 10px;
 		align-self: center;
 		justify-items: center;
+		justify-self: center;
+	}
+
+	.BlockError {
+		display: grid;
+		grid-column: 1 / 6;
+		align-self: center;
 		justify-self: center;
 	}
 }

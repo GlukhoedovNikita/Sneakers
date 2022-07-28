@@ -8,11 +8,9 @@ import styles from './Plus.module.scss'
 import plus from '@assets/img/plus.svg'
 import plusActive from '@assets/img/plus-active.svg'
 
-const Plus: FC<PlusProps> = ({ className, initialActive = false, ...props }) => {
-    const [active, setActive] = useState<boolean>(initialActive)
+const Plus: FC<PlusProps> = ({ className, active, ...props }) => {
     const [hover, setHover] = useState<boolean>(false)
 
-    const activeHandler = () => setActive(!active)
     const hoverTrueHandler = () => setHover(true)
     const hoverFalseHandler = () => setHover(false)
     return (
@@ -20,7 +18,6 @@ const Plus: FC<PlusProps> = ({ className, initialActive = false, ...props }) => 
             className={cn(className, styles.Container, {
                 [styles.Active]: active,
             })}
-            onClick={activeHandler}
             onMouseOver={hoverTrueHandler}
             onMouseOut={hoverFalseHandler}
             {...props}

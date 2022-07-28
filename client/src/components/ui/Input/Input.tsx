@@ -9,6 +9,8 @@ const Input: FC<InputProps> = ({
     className,
     type = 'text',
     placeholder,
+    value,
+    onChange,
     ...props
 }) => {
     return (
@@ -16,6 +18,8 @@ const Input: FC<InputProps> = ({
             className={cn(styles.Container, className)}
             type={type}
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
             {...props}
         />
     )

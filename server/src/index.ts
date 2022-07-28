@@ -24,6 +24,7 @@ app.use(cors({
     origin: process.env.CLIENT_URL
 }))
 app.use(fileUpload())
+app.use(express.static(pathResolve('../static')))
 app.use(cookieParser())
 
 app.use('/product', productRouter)

@@ -6,4 +6,5 @@ export interface ButtonProps extends DetailedHTMLProps<HTMLAttributes<HTMLButton
     size: 'big' | 'medium' | 'small',
     square?: boolean,
     text: string,
+    disabled?: boolean,
 }

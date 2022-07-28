@@ -11,6 +11,7 @@ const Button: FC<ButtonProps> = ({
     color = 'green',
     square = false,
     size,
+    disabled = false,
     ...props
 }) => {
     return (
@@ -24,6 +25,7 @@ const Button: FC<ButtonProps> = ({
                 [styles.Blue]: color === 'blue',
                 [styles.Square]: square,
             })}
+            disabled={disabled}
             {...props}
         >
             {text}

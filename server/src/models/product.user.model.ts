@@ -7,7 +7,7 @@ const productUser = new Schema({
         unique: true,
         ref: 'auth'
     },
-    favourites: { type: Schema.Types.Array, required: true, default: [] },
+    favourite: { type: Schema.Types.Array, required: true, default: [] },
     cart: { type: Schema.Types.Array, required: true, default: [] },
     order: { type: Schema.Types.Array, required: true, default: [] },
 })

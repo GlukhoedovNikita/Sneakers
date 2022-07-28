@@ -35,6 +35,9 @@
 		}
 
 		.BlockBtn {
+			display: grid;
+			gap: 5px;
+			justify-items: center;
 			justify-self: center;
 		}
 	}

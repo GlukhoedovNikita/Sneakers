@@ -73,9 +73,7 @@ class AuthService {
         try {
             const user = await this.check(refreshToken)
             await tokenService.delete(refreshToken)
-            console.log(user)
             const tokens = tokenService.create(user?.email as string, String(user?._id))
-            console.log(1)
             await tokenService.save(String(user?._id), tokens.refreshToken)
             return {
                 user,

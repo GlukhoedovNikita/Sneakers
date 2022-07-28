@@ -2,6 +2,9 @@ import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import cn from 'classnames'
 
+import useTypedDispatch from '@hooks/useTypedDispatch'
+import { authLogout } from '@store/slices/auth/auth.actions'
+
 import { ToggleListProps } from './ToggleList.types'
 
 import styles from './ToggleList.module.scss'
@@ -13,6 +16,10 @@ const ToggleList: FC<ToggleListProps> = ({
     active,
     ...props
 }) => {
+    const dispatch = useTypedDispatch()
+
+    const logoutHandler = () => dispatch(authLogout())
+
     return (
         <div
             className={cn(styles.Container, className, {
@@ -31,7 +38,7 @@ const ToggleList: FC<ToggleListProps> = ({
                     </Link>
                 ))
             }
-            <button className={styles.Link}>
+            <button onClick={logoutHandler} className={styles.Link}>
                 {values[values.length - 1]}
             </button>
         </div>

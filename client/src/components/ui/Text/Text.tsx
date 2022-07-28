@@ -19,6 +19,7 @@ const Text: FC<TextProps> = ({
                 [styles.Black]: color === 'black',
                 [styles.Gray]: color === 'gray',
                 [styles.Green]: color === 'green',
+                [styles.Red]: color === 'red',
                 [styles.H1]: size === 'h1',
                 [styles.H2]: size === 'h2',
                 [styles.H3]: size === 'h3',

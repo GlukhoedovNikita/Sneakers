@@ -6,33 +6,40 @@ import {
 
 import useOnClickOutside from '@hooks/useOnClickOutside'
 import useRedirect from '@hooks/useRedirect'
+import useTypedSelector from '@hooks/useTypedSelector'
+import useTypedDispatch from '@hooks/useTypedDispatch'
+
+import { setActiveCart } from '@store/slices/modal/modal.slice'
+import authSelector from '@store/slices/auth/auth.selector'
 
 import HeaderIcon from '@components/ui/HeaderIcon/HeaderIcon'
 import Logo from '@components/ui/Logo/Logo'
 import Text from '@components/ui/Text/Text'
 import ToggleList from '../ToggleList/ToggleList'
-// import Button from '@components/ui/Button/Button'
+import Button from '@components/ui/Button/Button'
+import CartModal from '../Modal/CartModal/CartModal'
 
 import styles from './Header.module.scss'
 
 import cart from '@assets/img/cart.svg'
 import favourite from '@assets/img/favourite.svg'
 import profile from '@assets/img/profile.svg'
-import CartModal from '../Modal/CartModal/CartModal'
 
 const Header: FC = () => {
+    const dispatch = useTypedDispatch()
+    const { isAuth } = useTypedSelector(authSelector)
+
     const redirectHome = useRedirect('/')
     const redirectFavourite = useRedirect('/favourite')
-    // const redirectSingIn = useRedirect('/singin')
-    // const redirectSingUp = useRedirect('/singup')
+    const redirectSingIn = useRedirect('/singin')
+    const redirectSingUp = useRedirect('/singup')
 
     const refToggleList = useRef(null)
     const [activeToggleList, setActiveToggleList] = useState<boolean>(false)
     const activeToggleListHandler = () => setActiveToggleList(!activeToggleList)
     useOnClickOutside(refToggleList, () => setActiveToggleList(false))
 
-    const [activeModal, setActiveModal] = useState<boolean>(false)
-    const activeModalHandler = () => setActiveModal(!activeModal)
+    const activeModalHandler = () => dispatch(setActiveCart())
 
     return (
         <div className={styles.Container}>
@@ -42,19 +49,28 @@ const Header: FC = () => {
                 <Text size="h4" color="gray" text="Best sneaker store" />
             </div>
             <div className={styles.BlockBtn}>
-                {/* <Button onClick={redirectSingIn} size="small" color="white" text="Sing in" />
-                <Button onClick={redirectSingUp} size="small" text="Sing up" /> */}
-                <HeaderIcon onClick={activeModalHandler} image={cart} alt="Cart Icon" />
-                <HeaderIcon onClick={redirectFavourite} image={favourite} alt="Favourite Icon" />
-                <div ref={refToggleList}>
-                    <HeaderIcon onClick={activeToggleListHandler} image={profile} alt="Profile Icon" />
-                    <ToggleList
-                        active={activeToggleList}
-                        values={['Home', 'Favourites', 'Order', 'Logout']}
-                        valuesLink={['/', '/favourite', '/order']}
-                    />
-                </div>
-                <CartModal active={activeModal} setActive={setActiveModal} />
+                {
+                    isAuth
+                        ?
+                        <>
+                            <HeaderIcon onClick={activeModalHandler} image={cart} alt="Cart Icon" />
+                            <HeaderIcon onClick={redirectFavourite} image={favourite} alt="Favourite Icon" />
+                            <div ref={refToggleList}>
+                                <HeaderIcon onClick={activeToggleListHandler} image={profile} alt="Profile Icon" />
+                                <ToggleList
+                                    active={activeToggleList}
+                                    values={['Home', 'Favourite', 'Order', 'Logout']}
+                                    valuesLink={['/', '/favourite', '/order']}
+                                />
+                            </div>
+                            <CartModal />
+                        </>
+                        :
+                        <>
+                            <Button onClick={redirectSingIn} size="small" color="white" text="Sing in" />
+                            <Button onClick={redirectSingUp} size="small" text="Sing up" />
+                        </>
+                }
             </div>
         </div>
     )

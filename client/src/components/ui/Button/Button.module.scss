@@ -1,7 +1,7 @@
 @import "@styles/variables";
 
 .Container {
-	cursor: pointer;
+	cursor: auto;
 
 	display: block;
 
@@ -12,6 +12,14 @@
 	line-height: 19px;
 
 	transition: $transition;
+
+	&:disabled {
+		opacity: 0.7;
+	}
+
+	&:hover:not([disabled]) {
+		cursor: pointer;
+	}
 }
 
 .Green {
@@ -20,7 +28,7 @@
 	background: $color-green;
 	border: 1px solid $color-green;
 
-	&:hover {
+	&:hover:not([disabled]) {
 		color: $color-green;
 
 		background: $color-white;
@@ -33,7 +41,7 @@
 	background: $color-white;
 	border: 1px solid $color-green;
 
-	&:hover {
+	&:hover:not([disabled]) {
 		color: $color-white;
 
 		background: $color-green;
@@ -46,7 +54,7 @@
 	background: $color-primary;
 	border: 1px solid $color-primary;
 
-	&:hover {
+	&:hover:not([disabled]) {
 		color: $color-primary;
 
 		background: $color-white;
@@ -62,7 +70,7 @@
 	border: 3px solid;
 	border-radius: 40px;
 
-	&:hover {
+	&:hover:not([disabled]) {
 		border-radius: 45px;
 	}
 }
@@ -72,7 +80,7 @@
 
 	border-radius: 20px;
 
-	&:hover {
+	&:hover:not([disabled]) {
 		border-radius: 25px;
 	}
 }
@@ -82,7 +90,7 @@
 
 	border-radius: 20px;
 
-	&:hover {
+	&:hover:not([disabled]) {
 		border-radius: 25px;
 	}
 }
@@ -92,7 +100,7 @@
 
 	transition: $transition;
 
-	&:hover {
+	&:hover:not([disabled]) {
 		border-radius: 15px;
 	}
 }

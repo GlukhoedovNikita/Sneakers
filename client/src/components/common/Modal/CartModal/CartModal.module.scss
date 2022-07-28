@@ -27,6 +27,11 @@
 			margin-bottom: 30px;
 		}
 
+		.BlockError {
+			align-self: center;
+			justify-self: center;
+		}
+
 		.BlockEmpty,
 		.BlockSuccess {
 			display: grid;
@@ -48,7 +53,7 @@
 				overflow-y: auto;
 				display: grid;
 				gap: 30px 0;
-				align-items: flex-start;
+				align-content: flex-start;
 
 				max-height: 70vh;
 				padding: 0 10px;

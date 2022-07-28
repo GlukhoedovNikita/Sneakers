@@ -8,11 +8,9 @@ import styles from './Like.module.scss'
 import like from '@assets/img/like.svg'
 import likeActive from '@assets/img/like-active.svg'
 
-const Like: FC<LikeProps> = ({ className, initialActive = false, ...props }) => {
-    const [active, setActive] = useState<boolean>(initialActive)
+const Like: FC<LikeProps> = ({ className, active, ...props }) => {
     const [hover, setHover] = useState<boolean>(false)
 
-    const activeHandler = () => setActive(!active)
     const hoverTrueHandler = () => setHover(true)
     const hoverFalseHandler = () => setHover(false)
 
@@ -21,7 +19,6 @@ const Like: FC<LikeProps> = ({ className, initialActive = false, ...props }) => 
             className={cn(className, styles.Container, {
                 [styles.Active]: active,
             })}
-            onClick={activeHandler}
             onMouseOver={hoverTrueHandler}
             onMouseOut={hoverFalseHandler}
             {...props}
