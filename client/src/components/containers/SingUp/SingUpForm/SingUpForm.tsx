@@ -1,23 +1,27 @@
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
 
-import useRedirect from '@hooks/useRedirect'
-import useInput from '@hooks/useInput'
-import useTypedDispatch from '@hooks/useTypedDispatch'
-import useTypedSelector from '@hooks/useTypedSelector'
+import {
+    useInput,
+    useRedirect,
+    useTypedDispatch,
+    useTypedSelector
+} from '@hooks/index'
 import authSelector from '@store/slices/auth/auth.selector'
 import { authRegistration } from '@store/slices/auth/auth.actions'
 
-import AuthButton from '@components/ui/AuthButton/AuthButton'
-import Button from '@components/ui/Button/Button'
-import Input from '@components/ui/Input/Input'
-import Text from '@components/ui/Text/Text'
-import HeaderIcon from '@components/ui/HeaderIcon/HeaderIcon'
+import {
+    AuthButton,
+    Button,
+    HeaderIcon,
+    Input,
+    Text
+} from '@components/ui'
 
 import { IUserRegistration } from '@store/slices/auth/auth.types'
 
 import styles from './SingUpForm.module.scss'
 
-import close from '@assets/img/close.svg'
+import { closeImg } from '@assets/index'
 
 const SingUpForm: FC = () => {
     const dispatch = useTypedDispatch()
@@ -30,18 +34,18 @@ const SingUpForm: FC = () => {
     const redirectSingIn = useRedirect('/singin')
     const redirectHome = useRedirect('/')
 
-    const singUpHandler = () => {
+    const singUpHandler = useCallback(() => {
         const user: IUserRegistration = {
             email: email.value,
             password: password.value
         }
         dispatch(authRegistration(user))
-    }
+    }, [email.value, password.value])
 
     return (
         <div className={styles.Container}>
             <div className={styles.BlockBtnClose}>
-                <HeaderIcon onClick={redirectHome} alt="Close Icon" image={close} />
+                <HeaderIcon onClick={redirectHome} alt="Close Icon" image={closeImg} />
             </div>
             <div className={styles.Content}>
                 <div className={styles.BlockNav}>

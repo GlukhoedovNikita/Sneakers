@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import cn from 'classnames'
 
 import { ButtonProps } from './Button.types'
@@ -33,4 +33,4 @@ const Button: FC<ButtonProps> = ({
     )
 }
 
-export default Button
+export default memo(Button)

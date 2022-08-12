@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import cn from 'classnames'
 
 import { InputProps } from './Input.types'
@@ -25,4 +25,4 @@ const Input: FC<InputProps> = ({
     )
 }
 
-export default Input
+export default memo(Input)

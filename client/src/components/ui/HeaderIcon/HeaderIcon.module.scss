@@ -9,3 +9,10 @@
 		transform: scale(1.1);
 	}
 }
+
+@media (max-width: 575.98px) {
+	.Container {
+		width: 25px;
+		height: 25px;
+	}
+}

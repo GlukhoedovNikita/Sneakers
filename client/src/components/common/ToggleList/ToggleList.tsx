@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { Link } from 'react-router-dom'
 import cn from 'classnames'
 
-import useTypedDispatch from '@hooks/useTypedDispatch'
+import { useTypedDispatch } from '@hooks/index'
 import { authLogout } from '@store/slices/auth/auth.actions'
 
 import { ToggleListProps } from './ToggleList.types'
@@ -45,4 +45,4 @@ const ToggleList: FC<ToggleListProps> = ({
     )
 }
 
-export default ToggleList
+export default memo(ToggleList)

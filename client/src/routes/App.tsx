@@ -1,22 +1,19 @@
-import { FC, useEffect } from 'react'
+import { FC, lazy, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
-import useTypedSelector from '@hooks/useTypedSelector'
-import useTypedDispatch from '@hooks/useTypedDispatch'
+import { useRedirect, useTypedDispatch, useTypedSelector } from '@hooks/index'
 import { authRefresh } from '@store/slices/auth/auth.actions'
 import authSelector from '@store/slices/auth/auth.selector'
 
-import {
-    NotFoundPage,
-    MainPage,
-    SingInPage,
-    SingUpPage,
-    FavouritePage,
-    OrderPage
-} from '@pages/index'
+import { MainPage } from '@pages/index'
 
 import '@styles/global.scss'
-import useRedirect from '@hooks/useRedirect'
+
+const FavouritePage = lazy(() => import('@pages/Favourite/Favourite'))
+const NotFoundPage = lazy(() => import('@pages/NotFound/NotFound'))
+const OrderPage = lazy(() => import('@pages/Order/Order'))
+const SingUpPage = lazy(() => import('@pages/SingUp/SingUp'))
+const SingInPage = lazy(() => import('@pages/SingIn/SingIn'))
 
 const App: FC = () => {
     const dispatch = useTypedDispatch()
@@ -35,8 +32,9 @@ const App: FC = () => {
 
     return (
         <Routes>
-            <Route path="*" element={<NotFoundPage />} />
             <Route path="/" element={<MainPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+
             {
                 isAuth
                     ?

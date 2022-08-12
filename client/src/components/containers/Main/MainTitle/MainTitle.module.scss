@@ -8,6 +8,62 @@
 	background: url("../../../../assets/img/bg-main-title.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
+	background-size: contain;
 	border-radius: 20px;
+}
+
+@media (max-width: 1399.98px) {
+	.Container {
+		margin: 25px 0;
+		padding: 80px 40px 60px;
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.Container {
+		margin: 20px 0;
+		padding: 70px 30px 50px;
+
+		.Btn {
+			padding: 17px 30px;
+
+			font-size: 22px;
+			line-height: 25px;
+		}
+	}
+}
+
+@media (max-width: 991.98px) {
+	.Container {
+		margin: 10px 0;
+
+		.Btn {
+			padding: 14px 20px;
+
+			font-size: 18px;
+			line-height: 20px;
+		}
+	}
+}
+
+@media (max-width: 767.98px) {
+	.Container {
+		padding: 40px 30px 35px;
+
+		.Btn {
+			padding: 10px 17px;
+
+			font-size: 16px;
+			line-height: 18px;
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	.Container {
+		margin: 20px 0;
+
+		background-position: right;
+		background-size: cover;
+	}
 }

@@ -1,11 +1,11 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import cn from 'classnames'
 
 import { LogoProps } from './Logo.types'
 
 import styles from './Logo.module.scss'
 
-import logo from '@assets/img/logo.svg'
+import { logoImg } from '@assets/index'
 
 const Logo: FC<LogoProps> = ({ className, ...props }) => {
     return (
@@ -13,11 +13,11 @@ const Logo: FC<LogoProps> = ({ className, ...props }) => {
             className={cn(className, styles.Container)}
             width={60}
             height={60}
-            src={logo}
+            src={logoImg}
             alt="Logo Icon"
             {...props}
         />
     )
 }
 
-export default Logo
+export default memo(Logo)

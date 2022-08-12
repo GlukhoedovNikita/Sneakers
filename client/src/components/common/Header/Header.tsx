@@ -1,29 +1,30 @@
 import {
     FC,
+    useCallback,
     useRef,
     useState
 } from 'react'
-
-import useOnClickOutside from '@hooks/useOnClickOutside'
-import useRedirect from '@hooks/useRedirect'
-import useTypedSelector from '@hooks/useTypedSelector'
-import useTypedDispatch from '@hooks/useTypedDispatch'
-
+import {
+    useTypedDispatch,
+    useTypedSelector,
+    useRedirect,
+    useOnClickOutside
+} from '@hooks/index'
 import { setActiveCart } from '@store/slices/modal/modal.slice'
 import authSelector from '@store/slices/auth/auth.selector'
 
-import HeaderIcon from '@components/ui/HeaderIcon/HeaderIcon'
-import Logo from '@components/ui/Logo/Logo'
-import Text from '@components/ui/Text/Text'
+import {
+    Button,
+    HeaderIcon,
+    Logo,
+    Text
+} from '@components/ui'
 import ToggleList from '../ToggleList/ToggleList'
-import Button from '@components/ui/Button/Button'
 import CartModal from '../Modal/CartModal/CartModal'
 
 import styles from './Header.module.scss'
 
-import cart from '@assets/img/cart.svg'
-import favourite from '@assets/img/favourite.svg'
-import profile from '@assets/img/profile.svg'
+import { cartImg, favouriteImg, profileImg } from '@assets/index'
 
 const Header: FC = () => {
     const dispatch = useTypedDispatch()
@@ -36,27 +37,27 @@ const Header: FC = () => {
 
     const refToggleList = useRef(null)
     const [activeToggleList, setActiveToggleList] = useState<boolean>(false)
-    const activeToggleListHandler = () => setActiveToggleList(!activeToggleList)
+    const activeToggleListHandler = useCallback(() => setActiveToggleList(!activeToggleList), [activeToggleList])
     useOnClickOutside(refToggleList, () => setActiveToggleList(false))
 
-    const activeModalHandler = () => dispatch(setActiveCart())
+    const activeModalHandler = useCallback(() => dispatch(setActiveCart()), [])
 
     return (
         <div className={styles.Container}>
             <div className={styles.BlockLogo}>
                 <Logo onClick={redirectHome} className={styles.Logo} />
-                <Text size="h1" text="Sneakers Shop" />
-                <Text size="h4" color="gray" text="Best sneaker store" />
+                <Text className={styles.Title} size="h1" text="Sneakers Shop" />
+                <Text className={styles.Text} size="h4" color="gray" text="Best sneaker store" />
             </div>
             <div className={styles.BlockBtn}>
                 {
                     isAuth
                         ?
                         <>
-                            <HeaderIcon onClick={activeModalHandler} image={cart} alt="Cart Icon" />
-                            <HeaderIcon onClick={redirectFavourite} image={favourite} alt="Favourite Icon" />
+                            <HeaderIcon onClick={activeModalHandler} image={cartImg} alt="Cart Icon" />
+                            <HeaderIcon onClick={redirectFavourite} image={favouriteImg} alt="Favourite Icon" />
                             <div ref={refToggleList}>
-                                <HeaderIcon onClick={activeToggleListHandler} image={profile} alt="Profile Icon" />
+                                <HeaderIcon onClick={activeToggleListHandler} image={profileImg} alt="Profile Icon" />
                                 <ToggleList
                                     active={activeToggleList}
                                     values={['Home', 'Favourite', 'Order', 'Logout']}

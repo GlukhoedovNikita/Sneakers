@@ -13,7 +13,42 @@
 
 		.BlockError {
 			grid-column: 1 / 6;
+			align-self: center;
 			justify-self: center;
+		}
+	}
+}
+
+@media (max-width: 1780px) {
+	.Container {
+		.BlockProducts {
+			grid-template-columns: repeat(4, auto);
+		}
+	}
+}
+
+@media (max-width: 1399.98px) {
+	.Container {
+		.BlockProducts {
+			grid-template-columns: repeat(3, auto);
+		}
+	}
+}
+
+@media (max-width: 991.98px) {
+	.Container {
+		.BlockProducts {
+			grid-template-columns: repeat(2, auto);
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	.Container {
+		.BlockProducts {
+			grid-template-columns: auto;
+			gap: 20px 0;
+			justify-content: center;
 		}
 	}
 }

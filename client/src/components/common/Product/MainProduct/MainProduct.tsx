@@ -1,28 +1,30 @@
-import { FC, useEffect, useState } from 'react'
+import {
+    FC,
+    memo,
+    useCallback,
+    useEffect,
+    useState
+} from 'react'
 import cn from 'classnames'
 
-import useTypedSelector from '@hooks/useTypedSelector'
-import useTypedDispatch from '@hooks/useTypedDispatch'
-
+import { useTypedDispatch, useTypedSelector } from '@hooks/index'
 import { setActiveWarning } from '@store/slices/modal/modal.slice'
 import authSelector from '@store/slices/auth/auth.selector'
 import productSelector from '@store/slices/product/product.selector'
 import productUserSelector from '@store/slices/productUser/product.user.selector'
-
-import Like from '@components/ui/Like/Like'
-import Plus from '@components/ui/Plus/Plus'
-import Text from '@components/ui/Text/Text'
-
-import { MainProductProps } from './MainProduct.types'
-import imageLoad from '@utils/imageLoad'
-
-import styles from './MainProduct.module.scss'
 import {
     updateAddCart,
     updateAddFavourite,
     updateDeleteCart,
     updateDeleteFavourite
 } from '@store/slices/productUser/product.user.actions'
+
+import { Like, Plus, Text } from '@components/ui'
+
+import { MainProductProps } from './MainProduct.types'
+import imageLoad from '@utils/imageLoad'
+
+import styles from './MainProduct.module.scss'
 
 const MainProduct: FC<MainProductProps> = ({
     className,
@@ -50,19 +52,19 @@ const MainProduct: FC<MainProductProps> = ({
         else setActiveCart(false)
     }, [isAuth, cart])
 
-    const favouriteHandler = () => {
+    const favouriteHandler = useCallback(() => {
         isAuth ? setActiveFavourite(!activeFavourite) : dispatch(setActiveWarning())
         activeFavourite
             ? dispatch(updateDeleteFavourite({ productId: id, favourite }))
             : dispatch(updateAddFavourite({ productId: id, products, favourite }))
-    }
+    }, [isAuth, activeFavourite, id, favourite, products])
 
-    const cartHandler = () => {
+    const cartHandler = useCallback(() => {
         isAuth ? setActiveCart(!activeCart) : dispatch(setActiveWarning())
         activeCart
             ? dispatch(updateDeleteCart({ productId: id, cart }))
             : dispatch(updateAddCart({ productId: id, products, cart }))
-    }
+    }, [isAuth, activeCart, id, cart, products])
 
     return (
         <div
@@ -90,4 +92,4 @@ const MainProduct: FC<MainProductProps> = ({
     )
 }
 
-export default MainProduct
+export default memo(MainProduct)

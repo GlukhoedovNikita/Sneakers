@@ -1,13 +1,11 @@
 import { FC } from 'react'
 import cn from 'classnames'
 
-import useTypedDispatch from '@hooks/useTypedDispatch'
-import useTypedSelector from '@hooks/useTypedSelector'
+import { useTypedSelector, useTypedDispatch } from '@hooks/index'
 import productUserSelector from '@store/slices/productUser/product.user.selector'
 import { updateDeleteCart } from '@store/slices/productUser/product.user.actions'
 
-import Delete from '@components/ui/Delete/Delete'
-import Text from '@components/ui/Text/Text'
+import { Delete, Text } from '@components/ui'
 
 import { CartProductProps } from './CartProduct.types'
 import imageLoad from '@utils/imageLoad'
@@ -39,7 +37,7 @@ const CartProduct: FC<CartProductProps> = ({
                 alt="Sneaker"
             />
             <div className={styles.BlockText}>
-                <Text text={`Mens Snakers ${name}`} size="h4" />
+                <Text className={styles.Name} text={`Mens Snakers ${name}`} size="h4" />
                 <Text text={`${price} rub.`} size="h4" bold={600} />
             </div>
             <Delete onClick={deleteCartHanlder} className={styles.BtnDelete} />

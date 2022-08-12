@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
@@ -15,7 +16,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <BrowserRouter>
         <Provider store={store}>
-            <App />
+            <Suspense>
+                <App />
+            </Suspense>
         </Provider>
     </BrowserRouter>
 )

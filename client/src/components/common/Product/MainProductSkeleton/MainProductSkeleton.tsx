@@ -2,13 +2,15 @@ import { FC } from 'react'
 
 import styles from './MainProductSkeleton.module.scss'
 
-import productLoading from '@assets/img/product-main-loading.jpg'
+import { productMainLoading } from '@assets/index'
 
 const MainProductSkeleton: FC = () => {
     return (
         <img
             className={styles.Container}
-            src={productLoading}
+            width={300}
+            height={300}
+            src={productMainLoading}
             alt="Loading Product"
         />
     )

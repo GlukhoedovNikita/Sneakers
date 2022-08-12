@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import cn from 'classnames'
 
 import { TextColorfulProps } from './TextColorful.types'
@@ -30,4 +30,4 @@ const TextColorful: FC<TextColorfulProps> = ({
     )
 }
 
-export default TextColorful
+export default memo(TextColorful)

@@ -6,25 +6,21 @@ import {
 } from 'react'
 import cn from 'classnames'
 
-import useTypedDispatch from '@hooks/useTypedDispatch'
-import useTypedSelector from '@hooks/useTypedSelector'
+import { useTypedSelector, useTypedDispatch } from '@hooks/index'
 import { setActiveCart } from '@store/slices/modal/modal.slice'
 import { fetchCart, updateOrder } from '@store/slices/productUser/product.user.actions'
 import modalSelector from '@store/slices/modal/modal.selector'
 import productUserSelector from '@store/slices/productUser/product.user.selector'
 
-import Text from '@components/ui/Text/Text'
-import Button from '@components/ui/Button/Button'
-import CartProduct from '@components/common/Product/CartProduct/CartProduct'
-import Error from '@components/common/Error/Error'
+import { Button, HeaderIcon, Text } from '@components/ui'
+import { Error, CartProduct } from '@components/common'
 
 import { CartModalProps } from './CartModal.types'
+import calcPriceCart from '@utils/calcPriceCart'
 
 import styles from './CartModal.module.scss'
 
-import cartEmpty from '@assets/img/cart-empty.jpg'
-import orderSuccess from '@assets/img/order-success.jpg'
-import calcPriceCart from '@utils/calcPriceCart'
+import { cartEmpty, orderSuccess, closeImg } from '@assets/index'
 
 const CartModal: FC<CartModalProps> = ({
     className,
@@ -73,6 +69,12 @@ const CartModal: FC<CartModalProps> = ({
                 <div className={styles.BlockTitle}>
                     <Text text="Cart" size="h2" />
                 </div>
+                <HeaderIcon
+                    onClick={(e) => activeHandler(e)}
+                    className={styles.BtnClose}
+                    image={closeImg}
+                    alt="Close Icon"
+                />
                 {
                     !!cart?.length &&
                     <div className={styles.BlockContent}>

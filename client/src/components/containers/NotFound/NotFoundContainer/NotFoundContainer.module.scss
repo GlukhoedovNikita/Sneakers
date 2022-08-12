@@ -10,3 +10,12 @@
 	background-color: $color-white;
 	border-radius: 40px;
 }
+
+@media (max-width: 575.98px) {
+	.Container {
+		margin: 0 5%;
+		padding: 30px;
+
+		text-align: center;
+	}
+}

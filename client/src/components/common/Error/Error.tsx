@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import cn from 'classnames'
 
+import { Emoji, Text } from '@components/ui'
+
 import { ErrorProps } from './Error.types'
 
 import styles from './Error.module.scss'
-import Text from '@components/ui/Text/Text'
-import Emoji from '@components/ui/Emoji/Emoji'
 
 const Error: FC<ErrorProps> = ({ className, ...props }) => {
     return (

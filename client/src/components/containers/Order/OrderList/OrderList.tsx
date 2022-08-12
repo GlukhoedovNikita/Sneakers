@@ -2,20 +2,14 @@
 
 import { FC, useEffect } from 'react'
 
-import useRedirect from '@hooks/useRedirect'
-import useTypedSelector from '@hooks/useTypedSelector'
-import useTypedDispatch from '@hooks/useTypedDispatch'
+import { useTypedDispatch, useTypedSelector, useRedirect } from '@hooks/index'
 import { fetchOrder } from '@store/slices/productUser/product.user.actions'
 import productUserSelector from '@store/slices/productUser/product.user.selector'
 
-import MainProduct from '@components/common/Product/MainProduct/MainProduct'
-import Text from '@components/ui/Text/Text'
-import Button from '@components/ui/Button/Button'
-import Emoji from '@components/ui/Emoji/Emoji'
-import MainProductSkeleton from '@components/common/Product/MainProductSkeleton/MainProductSkeleton'
+import { Button, Emoji, Text } from '@components/ui'
+import { Error, MainProduct, MainProductSkeleton } from '@components/common'
 
 import styles from './OrderList.module.scss'
-import Error from '@components/common/Error/Error'
 
 const OrderList: FC = () => {
     const dispatch = useTypedDispatch()

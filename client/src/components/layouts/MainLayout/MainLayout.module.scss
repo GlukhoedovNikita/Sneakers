@@ -4,7 +4,7 @@
 	display: grid;
 
 	min-height: 95vh;
-	padding: 5% 10% 0;
+	padding: 5% 10%;
 
 	background-color: $color-blue-light;
 
@@ -16,7 +16,7 @@
 		grid-template-rows: 110px 1fr;
 
 		background-color: $color-white;
-		border-radius: 20px 20px 0 0;
+		border-radius: 20px;
 
 		.Body {
 			grid-area: body;
@@ -24,6 +24,32 @@
 			padding: 0 3%;
 
 			border-radius: 20px 20px 0 0;
+		}
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.Container {
+		padding: 5% 7%;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.Container {
+		.Content {
+			.Body {
+				padding: 0 5%;
+			}
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	.Container {
+		padding: 0;
+
+		.Content {
+			grid-template-rows: 90px 1fr;
 		}
 	}
 }

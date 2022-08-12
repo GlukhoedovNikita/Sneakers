@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import cn from 'classnames'
 
 import { HeaderIconProps } from './HeaderIcon.types'
@@ -23,4 +23,4 @@ const HeaderIcon: FC<HeaderIconProps> = ({
     )
 }
 
-export default HeaderIcon
+export default memo(HeaderIcon)

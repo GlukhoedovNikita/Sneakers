@@ -1,14 +1,11 @@
 import { FC, MouseEvent, useEffect } from 'react'
 import cn from 'classnames'
 
-import useRedirect from '@hooks/useRedirect'
-import useTypedSelector from '@hooks/useTypedSelector'
-import useTypedDispatch from '@hooks/useTypedDispatch'
-
+import { useTypedDispatch, useTypedSelector, useRedirect } from '@hooks/index'
 import { setActiveWarning } from '@store/slices/modal/modal.slice'
 import modalSelector from '@store/slices/modal/modal.selector'
 
-import Emoji from '@components/ui/Emoji/Emoji'
+import { Emoji } from '@components/ui'
 
 import { WarningModalProps } from './WarningModal.types'
 

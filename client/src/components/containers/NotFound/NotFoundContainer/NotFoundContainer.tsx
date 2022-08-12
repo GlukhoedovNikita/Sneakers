@@ -1,10 +1,8 @@
 import { FC } from 'react'
 
-import useRedirect from '@hooks/useRedirect'
+import { useRedirect } from '@hooks/index'
 
-import Emoji from '@components/ui/Emoji/Emoji'
-import Text from '@components/ui/Text/Text'
-import Button from '@components/ui/Button/Button'
+import { Button, Emoji, Text } from '@components/ui'
 
 import styles from './NotFoundContainer.module.scss'
 

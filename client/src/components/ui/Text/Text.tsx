@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import cn from 'classnames'
 
 import { TextProps } from './Text.types'
@@ -35,4 +35,4 @@ const Text: FC<TextProps> = ({
     )
 }
 
-export default Text
+export default memo(Text)

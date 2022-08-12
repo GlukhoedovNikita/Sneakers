@@ -42,3 +42,25 @@
 		}
 	}
 }
+
+@media (max-width: 575.98px) {
+	.Container {
+		grid-template-rows: auto 1fr;
+		align-items: center;
+		justify-items: center;
+
+		width: 100vw;
+		height: 100vh;
+		padding: 20px 10px;
+
+		border-bottom: 20px solid $color-primary;
+
+		.Content {
+			gap: 30px 0;
+
+			padding: 0 20px;
+
+			text-align: center;
+		}
+	}
+}

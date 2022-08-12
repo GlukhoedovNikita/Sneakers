@@ -1,12 +1,11 @@
-import { FC, useState } from 'react'
+import { FC, memo, useState } from 'react'
 import cn from 'classnames'
 
 import { LikeProps } from './Like.types'
 
 import styles from './Like.module.scss'
 
-import like from '@assets/img/like.svg'
-import likeActive from '@assets/img/like-active.svg'
+import { likeImg, likeActiveImg } from '@assets/index'
 
 const Like: FC<LikeProps> = ({ className, active, ...props }) => {
     const [hover, setHover] = useState<boolean>(false)
@@ -26,11 +25,11 @@ const Like: FC<LikeProps> = ({ className, active, ...props }) => {
             <img
                 width={20}
                 height={20}
-                src={active || hover ? likeActive : like}
+                src={active || hover ? likeActiveImg : likeImg}
                 alt="Like Icon"
             />
         </button>
     )
 }
 
-export default Like
+export default memo(Like)

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useCallback, useState } from 'react'
 
 import useValidation from './useValidation'
 
@@ -13,13 +13,8 @@ const useInput = (initialState: string, validations: ValidationsType) => {
     const [isDirty, setDirty] = useState<boolean>(false)
     const valid = useValidation(value, validations)
 
-    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value)
-    }
-
-    const onBlur = () => {
-        setDirty(true)
-    }
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value)
+    const onBlur = useCallback(() => setDirty(true), [])
 
     return {
         value,

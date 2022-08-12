@@ -46,3 +46,13 @@
 .Active {
 	display: grid;
 }
+
+@media (max-width: 767.98px) {
+	.Container {
+		padding: 0 10px;
+
+		.Content {
+			text-align: center;
+		}
+	}
+}

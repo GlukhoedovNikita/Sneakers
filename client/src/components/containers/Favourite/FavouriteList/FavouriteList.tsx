@@ -2,18 +2,12 @@
 
 import { FC, useEffect } from 'react'
 
-import useRedirect from '@hooks/useRedirect'
-import useTypedDispatch from '@hooks/useTypedDispatch'
-import useTypedSelector from '@hooks/useTypedSelector'
+import { useTypedSelector, useTypedDispatch, useRedirect } from '@hooks/index'
 import { fetchFavourite } from '@store/slices/productUser/product.user.actions'
 import productUserSelector from '@store/slices/productUser/product.user.selector'
 
-import MainProduct from '@components/common/Product/MainProduct/MainProduct'
-import Text from '@components/ui/Text/Text'
-import Button from '@components/ui/Button/Button'
-import Emoji from '@components/ui/Emoji/Emoji'
-import Error from '@components/common/Error/Error'
-import MainProductSkeleton from '@components/common/Product/MainProductSkeleton/MainProductSkeleton'
+import { Button, Emoji, Text } from '@components/ui'
+import { Error, MainProduct, MainProductSkeleton } from '@components/common'
 
 import styles from './FavouriteList.module.scss'
 

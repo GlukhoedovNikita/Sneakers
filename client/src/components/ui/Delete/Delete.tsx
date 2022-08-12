@@ -5,8 +5,7 @@ import { DeleteProps } from './Delete.types'
 
 import styles from './Delete.module.scss'
 
-import deleteIcon from '@assets/img/delete.svg'
-import deleteActiveIcon from '@assets/img/delete-active.svg'
+import { deleteImg, deleteActiveImg } from '@assets/index'
 
 const Delete: FC<DeleteProps> = ({ className, ...props }) => {
     const [hover, setHover] = useState<boolean>(false)
@@ -24,7 +23,7 @@ const Delete: FC<DeleteProps> = ({ className, ...props }) => {
             <img
                 width={20}
                 height={20}
-                src={hover ? deleteActiveIcon : deleteIcon}
+                src={hover ? deleteActiveImg : deleteImg}
                 alt="Delete Icon"
             />
         </button>

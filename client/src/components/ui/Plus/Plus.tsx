@@ -1,12 +1,11 @@
-import { FC, useState } from 'react'
+import { FC, memo, useState } from 'react'
 import cn from 'classnames'
 
 import { PlusProps } from './Plus.types'
 
 import styles from './Plus.module.scss'
 
-import plus from '@assets/img/plus.svg'
-import plusActive from '@assets/img/plus-active.svg'
+import { plusImg, plusActiveImg } from '@assets/index'
 
 const Plus: FC<PlusProps> = ({ className, active, ...props }) => {
     const [hover, setHover] = useState<boolean>(false)
@@ -25,11 +24,11 @@ const Plus: FC<PlusProps> = ({ className, active, ...props }) => {
             <img
                 width={20}
                 height={20}
-                src={active || hover ? plusActive : plus}
+                src={active || hover ? plusActiveImg : plusImg}
                 alt="Plus Icon"
             />
         </button>
     )
 }
 
-export default Plus
+export default memo(Plus)

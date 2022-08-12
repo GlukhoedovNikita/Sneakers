@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import cn from 'classnames'
 
 import { AuthButtonProps } from './AuthButton.types'
@@ -24,4 +24,4 @@ const AuthButton: FC<AuthButtonProps> = ({
     )
 }
 
-export default AuthButton
+export default memo(AuthButton)

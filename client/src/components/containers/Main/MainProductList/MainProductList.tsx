@@ -2,17 +2,18 @@
 
 import { FC, useEffect } from 'react'
 
-import useTypedDispatch from '@hooks/useTypedDispatch'
-import useTypedSelector from '@hooks/useTypedSelector'
+import { useTypedSelector, useTypedDispatch } from '@hooks/index'
 import productSelector from '@store/slices/product/product.selector'
 import { fetchProduct } from '@store/slices/product/product.actions'
 import { fetchCart, fetchFavourite, fetchOrder } from '@store/slices/productUser/product.user.actions'
 
-import MainProduct from '@components/common/Product/MainProduct/MainProduct'
-import Text from '@components/ui/Text/Text'
-import WarningModal from '@components/common/Modal/WarningModal/WarningModal'
-import MainProductSkeleton from '@components/common/Product/MainProductSkeleton/MainProductSkeleton'
-import Error from '@components/common/Error/Error'
+import { Text } from '@components/ui'
+import {
+    Error,
+    MainProduct,
+    MainProductSkeleton,
+    WarningModal
+} from '@components/common'
 
 import styles from './MainProductList.module.scss'
 
